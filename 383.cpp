@@ -53,7 +53,7 @@ public:
                 N.push(abc[ransomNote[i]]);
             }
 
-            while (!ransomNote.empty())
+            while (!N.empty())
             {
                 if (N.top() <= M.top())
                 {
@@ -61,7 +61,7 @@ public:
                         N.pop();
                         M.pop();
                     } else {
-                        while (N.top() < M.top())
+                        while (N.top() < M.top() || N.size() > M.size())
                         {
                             M.pop();
                             if (M.empty())
@@ -81,8 +81,7 @@ public:
 };
 
 int main(){
-    /*Solution s1;
-    cout << s1.canConstruct("a","b");*/
-    cout << "codigo correcto";
+    Solution s1;
+    cout << s1.canConstruct("aa","ab") << endl;
     return 0;
 }
