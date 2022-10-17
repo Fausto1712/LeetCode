@@ -7,24 +7,22 @@ using namespace std;
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        int ran[26] = {0};
-        int mag[26] = {0};
-        for (int i = 0; i < magazine.length(); i++)
-        {
-            mag[(int)magazine[i]-97]++;
+        int n=ransomNote.length();
+        int m=magazine.length();
+        int c[26]={0};
+        for(int i=0;i<n;i++){
+            c[ransomNote[i]-'a']++;
         }
-        for (int j = 0; j < ransomNote.length(); j++)
-        {
-            ran[(int)ransomNote[j]-97]++;
+        for(int i=0;i<m;i++){
+            c[magazine[i]-'a']--;
         }
-        for (int i = 0; i < 26; i++)
-        {
-            if (mag[i] < ran[i])
+        for(int i=0;i<26;i++){
+            if(c[i]>0)
             {
-                return false;
+                return 0;
             }
         }
-        return true;
+        return 1;
     }
 };
 
