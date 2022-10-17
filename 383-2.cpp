@@ -10,14 +10,14 @@ public:
         int n=ransomNote.length();
         int m=magazine.length();
         int c[26]={0};
-        for(int i=0;i<n;i++){
-            c[ransomNote[i]-'a']++;
-        }
+
         for(int i=0;i<m;i++){
-            c[magazine[i]-'a']--;
+            c[magazine[i]-'a']++;
         }
-        for(int i=0;i<26;i++){
-            if(c[i]>0)
+        
+        for(int i=0;i<n;i++){
+            c[ransomNote[i]-'a']--;
+            if (c[ransomNote[i]-'a'] < 0)
             {
                 return 0;
             }
