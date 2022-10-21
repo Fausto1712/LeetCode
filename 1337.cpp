@@ -3,7 +3,6 @@
 #include <vector>
 
 using namespace std;
-typedef pair<int, int> pi;
 
 class Solution {
     typedef pair<int, int> pi;
